@@ -4,6 +4,7 @@ import {BrowserModule} from '@angular/platform-browser';
 
 import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
+import {FlightSearchComponent} from './flight-search/flight-search.component';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import {HomeComponent} from './home/home.component';
     // Directives
     // Pipes
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    FlightSearchComponent
   ],
   exports: [
     // Modules
