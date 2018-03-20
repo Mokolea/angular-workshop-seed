@@ -17,8 +17,8 @@
             </div>
 
             <div class="form-group">
-                <button
-                [disabled]="!to || !from"
+                <!--[disabled]="!to || !from"-->
+              <button
                 (click)="search()"
                 class="btn btn-default">Search</button>
             </div>
@@ -56,6 +56,6 @@
 <div class="card" *ngIf="selectedFlight">
     <div class="content">
         <!-- <pre>{{ selectedFlight | json }}</pre> --> <!-- neue Zeile -->
-      <flight-edit></flight-edit>
+      <flight-edit [selectedFlight]="selectedFlight"></flight-edit>
     </div>
 </div>

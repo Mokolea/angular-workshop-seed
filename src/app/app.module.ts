@@ -6,7 +6,8 @@ import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
 import {FlightSearchComponent} from './flight-search/flight-search.component';
 import {HttpClientModule} from '@angular/common/http';
-import { FlightEditComponent } from './flight-edit/flight-edit.component';
+import {FlightEditComponent} from './flight-edit/flight-edit.component';
+import {FlightService} from './flight-search/flight.service';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { FlightEditComponent } from './flight-edit/flight-edit.component';
   ],
   providers: [
     // Services
+    { provide: FlightService, useClass: FlightService }
   ],
   bootstrap: [AppComponent]
 })
