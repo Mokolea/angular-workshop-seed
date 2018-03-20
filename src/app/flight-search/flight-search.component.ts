@@ -5,7 +5,8 @@ import {FlightService} from './flight.service';
 
 @Component({
   selector: 'flight-search',
-  templateUrl: './flight-search.component.html'
+  templateUrl: './flight-search.component.html',
+  providers: [FlightService]
 })
 export class FlightSearchComponent implements OnInit {
   from: string;

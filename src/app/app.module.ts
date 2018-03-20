@@ -32,7 +32,9 @@ import {FlightService} from './flight-search/flight.service';
   ],
   providers: [
     // Services
-    { provide: FlightService, useClass: FlightService }
+    // { provide: FlightService, useClass: FlightService }
+    // FlightService // <-- short form
+    // or, see providers here: flight-search/flight-search.component.ts
   ],
   bootstrap: [AppComponent]
 })
