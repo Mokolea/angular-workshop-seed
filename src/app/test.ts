@@ -1,5 +1,7 @@
 // Info - Angular Workshop - 2018-03-19..22
 
+// Michael Hladky
+
 // https://goo.gl/Zaud7Z
 // https://drive.google.com/drive/folders/1qg87L8Yp81a2Of-PB7IieTsOEqfuLGAx
 
