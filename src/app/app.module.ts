@@ -6,6 +6,7 @@ import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
 import {FlightSearchComponent} from './flight-search/flight-search.component';
 import {HttpClientModule} from '@angular/common/http';
+import { FlightEditComponent } from './flight-edit/flight-edit.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import {HttpClientModule} from '@angular/common/http';
     // Pipes
     AppComponent,
     HomeComponent,
-    FlightSearchComponent
+    FlightSearchComponent,
+    FlightEditComponent
   ],
   exports: [
     // Modules
