@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Flight} from '../entities/flight';
+import {Flight} from '../../entities/flight';
 import {FlightService} from '../flight-search/flight.service';
 
 @Component({

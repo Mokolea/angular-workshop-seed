@@ -1,24 +1,16 @@
 import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
 
 import {AppComponent} from './app.component';
-import {HomeComponent} from './home/home.component';
-import {FlightSearchComponent} from './flight-search/flight-search.component';
 import {HttpClientModule} from '@angular/common/http';
-import {FlightEditComponent} from './flight-edit/flight-edit.component';
-import {CityPipe} from './shared/pipes/city.pipe';
+import {FlightBookingModule} from './flight-booking/flight-booking.module';
 
 @NgModule({
   declarations: [
     // Components
     // Directives
     // Pipes
-    AppComponent,
-    HomeComponent,
-    FlightSearchComponent,
-    FlightEditComponent,
-    CityPipe
+    AppComponent
   ],
   exports: [
     // Modules
@@ -28,8 +20,8 @@ import {CityPipe} from './shared/pipes/city.pipe';
   imports: [
     // Modules
     BrowserModule,
-    FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FlightBookingModule // <-- important
   ],
   providers: [
     // Services
