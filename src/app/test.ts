@@ -1,3 +1,13 @@
+// Info - Angular Workshop - 2018-03-19..22
+
+// https://goo.gl/Zaud7Z
+// https://drive.google.com/drive/folders/1qg87L8Yp81a2Of-PB7IieTsOEqfuLGAx
+
+// git status && echo - && git remote -v && echo - && git branch -avv
+// git push --set-upstream origin start_01_dev
+
+// TypeScript - compiler
+
 const t = 12;
 //t = 13121;
 
