@@ -25,7 +25,7 @@
     </div>
 </div>
 
-<div class="card">
+<!--<div class="card">
     <table class="table table-contensed" *ngIf="flights.length > 0">
         <thead>
         <tr>
@@ -47,11 +47,32 @@
             </td>
         </tr>
     </table>
+</div>-->
+
+<!--<p>
+  {{basket | json}}
+</p>-->
+
+<div class="row">
+    <div *ngFor="let f of flights"
+        class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+        <flight-card
+            [item]="f"
+            [selected]="basket[f.id]"
+            (selectedChange)="basket[f.id] = $event">
+        </flight-card>
+    </div>
 </div>
 
-<div class="card" *ngIf="selectedFlight">
+<!--<div class="card" *ngIf="selectedFlight">
     <div class="content">
-        <!-- <pre>{{ selectedFlight | json }}</pre> --> <!-- neue Zeile -->
+        &lt;!&ndash; <pre>{{ selectedFlight | json }}</pre> &ndash;&gt; &lt;!&ndash; neue Zeile &ndash;&gt;
       <flight-edit [selectedFlight]="selectedFlight"></flight-edit>
+    </div>
+</div>-->
+
+<div class="card">
+    <div class="content">
+        <pre>{{ basket | json }}</pre>
     </div>
 </div>
