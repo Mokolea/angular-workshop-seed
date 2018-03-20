@@ -8,6 +8,7 @@ import {FlightSearchComponent} from './flight-search/flight-search.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FlightEditComponent} from './flight-edit/flight-edit.component';
 import {FlightService} from './flight-search/flight.service';
+import {CityPipe} from './shared/pipes/city.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {FlightService} from './flight-search/flight.service';
     AppComponent,
     HomeComponent,
     FlightSearchComponent,
-    FlightEditComponent
+    FlightEditComponent,
+    CityPipe
   ],
   exports: [
     // Modules
