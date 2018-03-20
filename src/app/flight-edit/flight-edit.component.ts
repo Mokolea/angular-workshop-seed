@@ -1,6 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Flight} from '../entities/flight';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {FlightService} from '../flight-search/flight.service';
 
 @Component({
