@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Flight} from '../../entities/flight';
 import {FlightService} from '../flight-search/flight.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'flight-edit',
@@ -13,10 +14,13 @@ export class FlightEditComponent implements OnInit {
   //selectedFlight: Flight = {id: 5, from: 'Wien', to: 'Zürich', date: '01-01-2018'};
   message: string;
 
-  constructor(private flightService: FlightService) {
+  constructor(private flightService: FlightService, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
+    this.route.params.subscribe(
+      params => console.log(params)
+    )
   }
 
   // save(): void {
