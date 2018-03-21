@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Flight} from '../../entities/flight';
 import {FlightService} from '../flight-search/flight.service';
 import {ActivatedRoute} from '@angular/router';
+import {map, switchMap} from 'rxjs/operators';
 
 @Component({
   selector: 'flight-edit',
@@ -14,13 +15,24 @@ export class FlightEditComponent implements OnInit {
   //selectedFlight: Flight = {id: 5, from: 'Wien', to: 'Zürich', date: '01-01-2018'};
   message: string;
 
-  constructor(private flightService: FlightService, private route: ActivatedRoute) {
+  id$;
+  selectedFlight$;
+
+  constructor(private flightService: FlightService,
+              private route: ActivatedRoute) {
   }
 
   ngOnInit() {
-    this.route.params.subscribe(
+    /*this.route.params.subscribe(
       params => console.log(params)
-    )
+    )*/
+    this.id$ = this.route.params.pipe(map(params => params.id));
+
+    /* pluck */
+
+    /*this.selectedFlight$ = this.id$.pipe(
+      switchMap(id => this.flightService.findById())
+    )*/
   }
 
   // save(): void {
