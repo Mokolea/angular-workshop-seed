@@ -27,8 +27,8 @@ import {APP_ROUTES} from './app.routes';
     BrowserModule,
     HttpClientModule,
     FlightBookingModule,
-    // RouterModule.forRoot(APP_ROUTES, { useHash: true, enableTracing: true}) /* support old hash-fragment */
-    RouterModule.forRoot(APP_ROUTES)
+    // RouterModule.forRoot(APP_ROUTES, {useHash: true, enableTracing: true}) /* support old hash-fragment */
+    RouterModule.forRoot(APP_ROUTES, {enableTracing: true})
   ],
   providers: [
     // Services
