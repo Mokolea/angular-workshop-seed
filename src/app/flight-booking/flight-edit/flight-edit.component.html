@@ -5,32 +5,32 @@
 
 <div *ngIf="selectedFlight">
 
-    <div class="alert alert-danger" *ngIf="message">
-        {{ message }}
-    </div>
+  <div class="alert alert-danger" *ngIf="message">
+    {{ message }}
+  </div>
 
-    <div class="form-group">
-        <label>Id</label>
-        <input [(ngModel)]="selectedFlight.id" class="form-control">
-    </div>
+  <div class="form-group">
+    <label>Id</label>
+    <input [(ngModel)]="selectedFlight.id" class="form-control">
+  </div>
 
-    <div class="form-group">
-        <label>From</label>
-        <input [(ngModel)]="selectedFlight.from" class="form-control">
-    </div>
+  <div class="form-group">
+    <label>From</label>
+    <input [(ngModel)]="selectedFlight.from" class="form-control">
+  </div>
 
-    <!-- Ergänzen Sie hier analog Felder für die weiteren Eigenschaften des Fluges -->
+  <!-- Ergänzen Sie hier analog Felder für die weiteren Eigenschaften des Fluges -->
 
-    <div class="form-group">
-        <label>To</label>
-        <input [(ngModel)]="selectedFlight.to" class="form-control">
-    </div>
+  <div class="form-group">
+    <label>To</label>
+    <input [(ngModel)]="selectedFlight.to" class="form-control">
+  </div>
 
-    <div class="form-group">
-        <label>Date</label>
-        <input [(ngModel)]="selectedFlight.date" class="form-control">
-    </div>
+  <div class="form-group">
+    <label>Date</label>
+    <input [(ngModel)]="selectedFlight.date" class="form-control">
+  </div>
 
-    <button (click)="save()" class="btn btn-default">Save</button>
+  <button (click)="save()" class="btn btn-default">Save</button>
 
 </div>
