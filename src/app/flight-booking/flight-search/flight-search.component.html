@@ -65,13 +65,14 @@
 </div>-->
 
 <div class="row">
-    <div *ngFor="let f of flights"
-        class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-        <flight-card
-            [item]="f"
-            [(selected)]="basket[f.id]">
-        </flight-card>
-    </div>
+  <div *ngFor="let f of flights"
+      class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+    <flight-card
+      [item]="f"
+      [(selected)]="basket[f.id]">
+      <pre>{{ f | json }}</pre> <!--debug using ng-content -->
+    </flight-card>
+  </div>
 </div>
 
 <!--<div class="card" *ngIf="selectedFlight">
@@ -83,6 +84,6 @@
 
 <div class="card">
     <div class="content">
-        <pre>{{ basket | json }}</pre>
+        <pre>{{ basket | json }}</pre> <!--debug-->
     </div>
 </div>

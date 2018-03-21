@@ -15,7 +15,7 @@ export class FlightSearchComponent implements OnInit {
   selectedFlight: Flight;
 
   basket: object = {   // <-- new property
-    "3": true,
+    "3": true, // key flight-id, value
     "5": true
   };
 
