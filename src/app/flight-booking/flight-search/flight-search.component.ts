@@ -8,15 +8,16 @@ import {FlightService} from './flight.service';
   providers: [FlightService]
 })
 export class FlightSearchComponent implements OnInit {
+
   from: string;
   to: string;
   flights: Flight[] = [];
   selectedFlight: Flight;
 
-   basket: object = {   // <-- new property
-            "3": true,
-            "5": true
-        };
+  basket: object = {   // <-- new property
+    "3": true,
+    "5": true
+  };
 
   constructor(private flightService: FlightService) {
   }
@@ -59,4 +60,3 @@ export class FlightSearchComponent implements OnInit {
     this.selectedFlight = f;
   }
 }
-
