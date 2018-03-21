@@ -7,22 +7,8 @@ import {FlightService} from './flight-search/flight.service';
 import {FlightEditComponent} from './flight-edit/flight-edit.component';
 import {FlightCardComponent} from './flight-card/flight-card.component';
 import {PassengerSearchComponent} from './passenger-search/passenger-search.component';
-import {RouterModule, Routes} from '@angular/router';
-
-const FLIGHT_BOOKING_ROUTES: Routes = [
-  {
-    path: 'flight-search',
-    component: FlightSearchComponent
-  },
-  {
-    path: 'flight-edit/:id',
-    component: FlightEditComponent
-  },
-  {
-    path: 'passenger-search',
-    component: PassengerSearchComponent
-  }
-];
+import {RouterModule} from '@angular/router';
+import {FLIGHT_BOOKING_ROUTES} from './flight-booking.routes';
 
 @NgModule({
   imports: [

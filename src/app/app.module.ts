@@ -1,28 +1,12 @@
 import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import {RouterModule} from '@angular/router';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FlightBookingModule} from './flight-booking/flight-booking.module';
 import {HomeComponent} from './home/home.component';
 import {Error404Component} from './error404/error404.component';
-
-const APP_ROUTES: Routes = [
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
-  {
-    path: 'home',
-    component: HomeComponent
-  },
-  {
-    path: '**',
-    /*redirectTo: 'home'*/
-    component: Error404Component
-  }
-];
+import {APP_ROUTES} from './app.routes';
 
 @NgModule({
   declarations: [
