@@ -13,8 +13,11 @@ export const APP_ROUTES: Routes = [
     component: HomeComponent
   },
   {
-    path: '**',
-    /*redirectTo: 'home'*/
+    path: 'error404',
     component: Error404Component
+  },
+  {
+    path: '**',
+    redirectTo: 'error404'
   }
 ];

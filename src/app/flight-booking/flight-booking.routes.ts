@@ -1,7 +1,8 @@
-import {Routes} from '@angular/router';
+import {RouterModule, Routes} from '@angular/router';
 import {FlightSearchComponent} from './flight-search/flight-search.component';
 import {FlightEditComponent} from './flight-edit/flight-edit.component';
 import {PassengerSearchComponent} from './passenger-search/passenger-search.component';
+import {NgModule} from '@angular/core';
 
 export const FLIGHT_BOOKING_ROUTES: Routes = [
   {
@@ -17,3 +18,13 @@ export const FLIGHT_BOOKING_ROUTES: Routes = [
     component: PassengerSearchComponent
   }
 ];
+
+@NgModule({
+  imports: [
+    RouterModule.forChild(FLIGHT_BOOKING_ROUTES)
+  ],
+  exports: [
+    RouterModule
+  ]
+})
+export class FlightBookingRoutesModule { }
