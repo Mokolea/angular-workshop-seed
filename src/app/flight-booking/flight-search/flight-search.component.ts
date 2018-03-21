@@ -46,14 +46,14 @@ export class FlightSearchComponent implements OnInit {
 
   search(): void {
     this.flightService
-        .find(this.from, this.to)
-        .subscribe(
-            (flights) => {
-                this.flights = flights;
-            },
-            (errResp) => {
-                console.error('Error loading flights', errResp);
-            });
+      .find(this.from, this.to)
+      .subscribe(
+        (flights) => {
+          this.flights = flights;
+        },
+        (errResp) => {
+          console.error('Error loading flights', errResp);
+        });
   }
 
   select(f: Flight): void {

@@ -47,8 +47,8 @@ export class FlightEditComponent implements OnInit {
       .save(this.selectedFlight)
       .subscribe(
         (flight: Flight) => {
-                    this.selectedFlight = flight;
-                    this.message = 'Erfolgreich gespeichert!';
+          this.selectedFlight = flight;
+          this.message = 'Erfolgreich gespeichert!';
         },
         errResponse => {
           console.error('Fehler beim Speichern', errResponse);
