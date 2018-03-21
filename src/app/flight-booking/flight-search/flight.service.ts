@@ -11,11 +11,14 @@ export class FlightService {
 
   findById(id: string): Observable<Flight> {
     const url = 'http://www.angular.at/api/flight';
+
     const params = new HttpParams()
       .set('id', id);
+
     const headers = new HttpHeaders()
       .set('Accept', 'application/json');
-    return this.http.get<Flight>(url, { params, headers});
+
+    return this.http.get<Flight>(url, {params, headers});
   }
 
   find(from: string, to: string): Observable<Flight[]> {

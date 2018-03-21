@@ -26,13 +26,20 @@ export class FlightEditComponent implements OnInit {
     /*this.route.params.subscribe(
       params => console.log(params)
     )*/
-    this.id$ = this.route.params.pipe(map(params => params.id));
+    this.id$ = this.route.params.pipe(
+      map(params => params.id));
 
     /* pluck */
+
+    this.selectedFlight$ = this.route.params.pipe(
+      switchMap(params => this.flightService.findById(params.id)));
 
     /*this.selectedFlight$ = this.id$.pipe(
       switchMap(id => this.flightService.findById())
     )*/
+    /*this.selectedFlight$ = this.route.params.pipe(switchMap(params => {
+      this.flightService.findById(params.id)
+    }));*/
   }
 
   // save(): void {

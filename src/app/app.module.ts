@@ -26,7 +26,7 @@ import {APP_ROUTES} from './app.routes';
     // Modules
     BrowserModule,
     HttpClientModule,
-    FlightBookingModule,
+    FlightBookingModule, /* test lazy loading */
     // RouterModule.forRoot(APP_ROUTES, {useHash: true, enableTracing: true}) /* support old hash-fragment */
     RouterModule.forRoot(APP_ROUTES, {enableTracing: true})
   ],
