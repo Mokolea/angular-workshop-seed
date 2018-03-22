@@ -7,6 +7,7 @@ import {FlightBookingModule} from './flight-booking/flight-booking.module';
 import {HomeComponent} from './home/home.component';
 import {Error404Component} from './error404/error404.component';
 import {APP_ROUTES} from './app.routes';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {APP_ROUTES} from './app.routes';
     HttpClientModule,
     FlightBookingModule, /* test lazy loading */
     // RouterModule.forRoot(APP_ROUTES, {useHash: true, enableTracing: true}) /* support old hash-fragment */
-    RouterModule.forRoot(APP_ROUTES, {enableTracing: true})
+    RouterModule.forRoot(APP_ROUTES, {enableTracing: true}),
+    FormsModule
   ],
   providers: [
     // Services
