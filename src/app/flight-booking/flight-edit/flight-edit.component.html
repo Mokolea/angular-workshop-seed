@@ -20,14 +20,13 @@
       <input class="ng-pristine ng-valid ng-touched"
              name="id"
              ng-reflect-name="selectedFlight.id"
-             [(ngModel)]="selectedFlight.id" class="form-control">
+             [(ngModel)]="selectedFlight.id" required class="form-control">
       Id: {{selectedFlight.id}} <!--debug-->
       <p>
-        <!-- works but generates errors -->
-        <!--selectedFlight.id.value: {{f?.controls?.id.value}}<br/>
-        selectedFlight.id.valid: {{f?.controls?.id.valid}}<br/>
-        selectedFlight.id.touched: {{f?.controls?.id.touched}}<br/>
-        selectedFlight.id.errors: {{f?.controls?.id.errors | json}}-->
+        selectedFlight.id.value: {{f?.controls?.id?.value}}<br/>
+        selectedFlight.id.valid: {{f?.controls?.id?.valid}}<br/>
+        selectedFlight.id.touched: {{f?.controls?.id?.touched}}<br/>
+        selectedFlight.id.errors: {{f?.controls?.id?.errors | json}}
       </p>
     </div>
 
