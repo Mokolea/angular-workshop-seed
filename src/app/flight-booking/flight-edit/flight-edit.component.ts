@@ -42,6 +42,29 @@ export class FlightEditComponent implements OnInit {
     console.log(this.editForm.touched);
     console.log(this.editForm.pristine);
 
+    this.editForm
+      .valueChanges
+      .subscribe(
+        (value => console.log('value:', value))
+      );
+    this.editForm
+      .statusChanges
+      .subscribe(
+        (value => console.log('status:', value))
+      );
+    this.editForm
+      .get('id')
+      .valueChanges
+      .subscribe(
+        (value => console.log('id value:', value))
+      );
+    this.editForm
+      .get('id')
+      .statusChanges
+      .subscribe(
+        (value => console.log('id status:', value))
+      );
+
     /*this.route.params.subscribe(
       params => console.log(params)
     )*/

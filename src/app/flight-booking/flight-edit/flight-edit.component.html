@@ -54,17 +54,28 @@
 
   </form>
 
-  <form [formGroup]="editForm">
-    <input formControlName="id">
-    id: {{editForm.get('id').value}}
+  <!-- test ReactiveFormsModule -->
 
-    <input formControlName="from">
+  <form class="ng-pristine ng-valid ng-touched" [formGroup]="editForm">
+    <input class="ng-pristine ng-valid ng-touched"
+           formControlName="id">
+    id: {{editForm.get('id').value}}
+    <p>
+      id.value: {{editForm.get('id').value}}<br>
+      id.valid: {{editForm.get('id').valid}}<br>
+      id.touched: {{editForm.get('id').touched}}<br>
+      id.pristine: {{editForm.get('id').pristine}}
+    </p>
+    <input class="ng-pristine ng-valid ng-touched"
+           formControlName="from">
     from: {{editForm.get('from').value}}
 
-    <input formControlName="to">
+    <input class="ng-pristine ng-valid ng-touched"
+           formControlName="to">
     to: {{editForm.get('to').value}}
 
-    <input formControlName="date">
+    <input class="ng-pristine ng-valid ng-touched"
+           formControlName="date">
     date: {{editForm.get('date').value}}
   </form>
 
