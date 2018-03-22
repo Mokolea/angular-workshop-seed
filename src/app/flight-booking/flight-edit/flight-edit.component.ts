@@ -4,6 +4,7 @@ import {FlightService} from '../flight-search/flight.service';
 import {ActivatedRoute} from '@angular/router';
 import {map, switchMap} from 'rxjs/operators';
 import {Observable} from 'rxjs/Observable';
+import {validCity} from './validators/valid-city.validator';
 
 @Component({
   selector: 'flight-edit',
@@ -24,6 +25,7 @@ export class FlightEditComponent implements OnInit {
   }
 
   ngOnInit() {
+
     /*this.route.params.subscribe(
       params => console.log(params)
     )*/
