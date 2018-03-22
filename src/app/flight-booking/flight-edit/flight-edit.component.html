@@ -66,9 +66,16 @@
       id.touched: {{editForm.get('id').touched}}<br>
       id.pristine: {{editForm.get('id').pristine}}
     </p>
+
     <input class="ng-pristine ng-valid ng-touched"
            formControlName="from">
     from: {{editForm.get('from').value}}
+    <p>
+      errors: {{editForm.get('from').errors | json}}
+    </p>
+    <div class="text-danger" *ngIf="editForm.get('from').hasError('minlength')">
+      A min length of {{editForm.get('from').getError('minlength').requiredLength}} is required
+    </div>
 
     <input class="ng-pristine ng-valid ng-touched"
            formControlName="to">

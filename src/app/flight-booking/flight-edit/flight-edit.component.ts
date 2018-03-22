@@ -5,7 +5,7 @@ import {ActivatedRoute} from '@angular/router';
 import {map, switchMap} from 'rxjs/operators';
 import {Observable} from 'rxjs/Observable';
 import {validCity} from './validators/valid-city.validator';
-import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'flight-edit',
@@ -31,11 +31,12 @@ export class FlightEditComponent implements OnInit {
   ngOnInit() {
     /*const idControl = new FormControl(1);
     this.editForm = new FormGroup({id: idControl});*/
+
     this.editForm = this.fb.group({
-      id:   [1],
-      from: [],
-      to:   [],
-      date: []
+      id:   [1, Validators.required],
+      from: [null, [Validators.required, Validators.minLength(3)]],
+      to:   [null, [Validators.required, Validators.minLength(3)]],
+      date: [null, [Validators.required]]
     });
     console.log(this.editForm.value);
     console.log(this.editForm.valid);
