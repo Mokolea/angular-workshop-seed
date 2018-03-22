@@ -34,7 +34,7 @@ export class FlightEditComponent implements OnInit {
 
     this.editForm = this.fb.group({
       id:   [1, Validators.required],
-      from: [null, [Validators.required, Validators.minLength(3)]],
+      from: [null, [Validators.required, Validators.minLength(3), validCity]],
       to:   [null, [Validators.required, Validators.minLength(3)]],
       date: [null, [Validators.required]]
     });

@@ -76,6 +76,10 @@
     <div class="text-danger" *ngIf="editForm.get('from').hasError('minlength')">
       A min length of {{editForm.get('from').getError('minlength').requiredLength}} is required
     </div>
+    <div class="text-danger" *ngIf="editForm.get('from').hasError('validCity')">
+      {{editForm.get('from').getError('validCity').actualValue}} is not a valid city.
+      Use one of {{editForm.get('from').getError('validCity').validCities}}.
+    </div>
 
     <input class="ng-pristine ng-valid ng-touched"
            formControlName="to">
