@@ -4,7 +4,7 @@ import {FlightService} from '../flight-search/flight.service';
 import {ActivatedRoute} from '@angular/router';
 import {map, switchMap} from 'rxjs/operators';
 import {Observable} from 'rxjs/Observable';
-import {validCity} from './validators/valid-city.validator';
+import {validCityParam} from './validators/valid-city.validator';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
@@ -34,7 +34,8 @@ export class FlightEditComponent implements OnInit {
 
     this.editForm = this.fb.group({
       id:   [1, Validators.required],
-      from: [null, [Validators.required, Validators.minLength(3), validCity]],
+      /*from: [null, [Validators.required, Validators.minLength(3), validCity]],*/
+      from: [null, [Validators.required, Validators.minLength(3), validCityParam(['Zürich', 'Wien'])]],
       to:   [null, [Validators.required, Validators.minLength(3)]],
       date: [null, [Validators.required]]
     });
