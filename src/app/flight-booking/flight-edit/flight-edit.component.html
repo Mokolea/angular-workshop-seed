@@ -54,4 +54,18 @@
 
   </form>
 
+  <form [formGroup]="editForm">
+    <input formControlName="id">
+    id: {{editForm.get('id').value}}
+
+    <input formControlName="from">
+    from: {{editForm.get('from').value}}
+
+    <input formControlName="to">
+    to: {{editForm.get('to').value}}
+
+    <input formControlName="date">
+    date: {{editForm.get('date').value}}
+  </form>
+
 </div>
