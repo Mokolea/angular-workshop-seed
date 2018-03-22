@@ -5,6 +5,7 @@ import {ActivatedRoute} from '@angular/router';
 import {map, switchMap} from 'rxjs/operators';
 import {Observable} from 'rxjs/Observable';
 import {validCity} from './validators/valid-city.validator';
+import {FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'flight-edit',
@@ -20,11 +21,16 @@ export class FlightEditComponent implements OnInit {
   id$;
   selectedFlight$: Observable<Flight>;
 
+  editForm: FormGroup; // test ReactiveFormsModule
+
   constructor(private flightService: FlightService,
               private route: ActivatedRoute) {
   }
 
   ngOnInit() {
+    const idControl = new FormControl(1);
+    this.editForm = new FormGroup({id: idControl});
+    console.log(this.editForm.value);
 
     /*this.route.params.subscribe(
       params => console.log(params)
