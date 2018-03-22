@@ -7,7 +7,8 @@
 
 <div *ngIf="selectedFlight">
 
-  <form #f="ngForm">
+  <!--<form #f="ngForm">-->
+  <form class="ng-pristine ng-valid ng-touched" #f="ngForm">
 
     <div class="alert alert-danger" *ngIf="message">
       {{ message }}
@@ -15,13 +16,24 @@
 
     <div class="form-group">
       <label>Id</label>
-      <input name="selectedFlight.id" [(ngModel)]="selectedFlight.id" class="form-control">
+      <!--<input name="selectedFlight.id" [(ngModel)]="selectedFlight.id" class="form-control">-->
+      <input class="ng-pristine ng-valid ng-touched"
+             name="id"
+             ng-reflect-name="selectedFlight.id"
+             [(ngModel)]="selectedFlight.id" class="form-control">
       Id: {{selectedFlight.id}} <!--debug-->
+      <p>
+        <!-- works but generates errors -->
+        <!--selectedFlight.id.value: {{f?.controls?.id.value}}<br/>
+        selectedFlight.id.valid: {{f?.controls?.id.valid}}<br/>
+        selectedFlight.id.touched: {{f?.controls?.id.touched}}<br/>
+        selectedFlight.id.errors: {{f?.controls?.id.errors | json}}-->
+      </p>
     </div>
 
     <div class="form-group">
       <label>From</label>
-      <input name="selectedFlight.from" [(ngModel)]="selectedFlight.from" class="form-control">
+      <input name="from" [(ngModel)]="selectedFlight.from" class="form-control">
       From: {{selectedFlight.from}} <!--debug-->
     </div>
 
@@ -29,13 +41,13 @@
 
     <div class="form-group">
       <label>To</label>
-      <input name="selectedFlight.to" [(ngModel)]="selectedFlight.to" class="form-control">
+      <input name="to" [(ngModel)]="selectedFlight.to" class="form-control">
       To: {{selectedFlight.to}} <!--debug-->
     </div>
 
     <div class="form-group">
       <label>Date</label>
-      <input name="selectedFlight.date" [(ngModel)]="selectedFlight.date" class="form-control">
+      <input name="date" [(ngModel)]="selectedFlight.date" class="form-control">
       Date: {{selectedFlight.date}} <!--debug-->
     </div>
 
