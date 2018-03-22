@@ -3,6 +3,7 @@ import {Flight} from '../../entities/flight';
 import {FlightService} from '../flight-search/flight.service';
 import {ActivatedRoute} from '@angular/router';
 import {map, switchMap} from 'rxjs/operators';
+import {Observable} from 'rxjs/Observable';
 
 @Component({
   selector: 'flight-edit',
@@ -11,12 +12,12 @@ import {map, switchMap} from 'rxjs/operators';
 })
 export class FlightEditComponent implements OnInit {
 
-  @Input() selectedFlight: Flight;
+  @Input() selectedFlight: Flight = {} as Flight;
   //selectedFlight: Flight = {id: 5, from: 'Wien', to: 'Zürich', date: '01-01-2018'};
   message: string;
 
   id$;
-  selectedFlight$;
+  selectedFlight$: Observable<Flight>;
 
   constructor(private flightService: FlightService,
               private route: ActivatedRoute) {
@@ -29,7 +30,7 @@ export class FlightEditComponent implements OnInit {
     this.id$ = this.route.params.pipe(
       map(params => params.id));
 
-    /* pluck */
+    /* pluck() */
 
     this.selectedFlight$ = this.route.params.pipe(
       switchMap(params => this.flightService.findById(params.id)));
@@ -40,6 +41,14 @@ export class FlightEditComponent implements OnInit {
     /*this.selectedFlight$ = this.route.params.pipe(switchMap(params => {
       this.flightService.findById(params.id)
     }));*/
+
+    /* todo remove following ... use selectedFlight$, not selectedFlight */
+    this.route.params.pipe(
+      switchMap(params => this.flightService.findById(params.id)))
+      .subscribe(
+        flight => { this.selectedFlight = flight; this.message = ''; },
+        err => { this.message = 'Fehler beim Laden'; }
+    );
   }
 
   // save(): void {
