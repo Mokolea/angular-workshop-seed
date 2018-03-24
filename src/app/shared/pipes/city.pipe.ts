@@ -14,7 +14,7 @@ export class CityPipe implements PipeTransform {
 
     let short, long;
 
-    switch(value) {
+    switch (value) {
       case 'Graz':
         short = 'GRZ';
         long = 'Flughafen Graz Thalerhof';

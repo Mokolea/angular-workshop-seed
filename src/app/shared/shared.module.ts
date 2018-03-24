@@ -13,4 +13,5 @@ import {CityPipe} from './pipes/city.pipe';
     CityPipe
   ]
 })
-export class SharedModule { }
+export class SharedModule {
+}

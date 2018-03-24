@@ -8,11 +8,12 @@ import {Flight} from '../../entities/flight';
 })
 export class FlightCardComponent implements OnInit {
 
-  constructor() { }
-
   @Input() item: Flight;
   @Input() selected: boolean;
   @Output() selectedChange = new EventEmitter<boolean>();
+
+  constructor() {
+  }
 
   ngOnInit() {
   }

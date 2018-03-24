@@ -25,11 +25,12 @@ import {FlightBookingComponent} from './flight-booking.component';
     PassengerSearchComponent,
     FlightBookingComponent
   ],
-  providers:[
-    { provide: FlightService, useClass: FlightService }
+  providers: [
+    {provide: FlightService, useClass: FlightService}
   ],
   exports: [
     FlightSearchComponent
   ]
 })
-export class FlightBookingModule { }
+export class FlightBookingModule {
+}

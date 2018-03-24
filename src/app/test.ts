@@ -11,13 +11,13 @@
 // TypeScript - compiler
 
 const t = 12;
-//t = 13121;
+// t = 13121;
 
 let myname: string = 'aaa';
-//let myname = "bbb";
+// let myname = "bbb";
 
-//let myname: string;
-//myname = 'aaa';
+// let myname: string;
+// myname = 'aaa';
 
 
 let arr1: Array<string> = ['a', 'b'];
@@ -30,7 +30,7 @@ fn(1);
 
 function fn(param1: number, param2?: number): number { // optional param2
   console.log('aaa', this);
-  if(param2){
+  if (param2) {
     return param1 + param2;
   }
   else {
@@ -39,17 +39,17 @@ function fn(param1: number, param2?: number): number { // optional param2
 }
 
 // lambda
-let calc: (a:number, b:number) => number;
+let calc: (a: number, b: number) => number;
 
-calc = (a,b) => {
-  return a+b;
+calc = (a, b) => {
+  return a + b;
 };
 
 
 fn1(); // defined below - function "hoisting" ???
 
 function fn1(): void {
-  console.log('asdf')
+  console.log('asdf');
 }
 
 fn1.name; // attention for anonymous functions

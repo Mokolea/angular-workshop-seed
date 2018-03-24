@@ -34,4 +34,5 @@ export const FLIGHT_BOOKING_ROUTES: Routes = [
     RouterModule
   ]
 })
-export class FlightBookingRoutesModule { }
+export class FlightBookingRoutesModule {
+}

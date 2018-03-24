@@ -5,7 +5,7 @@ import {ActivatedRoute} from '@angular/router';
 import {map, switchMap} from 'rxjs/operators';
 import {Observable} from 'rxjs/Observable';
 import {validCityParam} from './validators/valid-city.validator';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'flight-edit',
@@ -15,7 +15,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 export class FlightEditComponent implements OnInit {
 
   @Input() selectedFlight: Flight = {} as Flight;
-  //selectedFlight: Flight = {id: 5, from: 'Wien', to: 'Zürich', date: '01-01-2018'};
+  // selectedFlight: Flight = {id: 5, from: 'Wien', to: 'Zürich', date: '01-01-2018'};
   message: string;
 
   id$;
@@ -33,10 +33,10 @@ export class FlightEditComponent implements OnInit {
     this.editForm = new FormGroup({id: idControl});*/
 
     this.editForm = this.fb.group({
-      id:   [1, Validators.required],
+      id: [1, Validators.required],
       /*from: [null, [Validators.required, Validators.minLength(3), validCity]],*/
       from: [null, [Validators.required, Validators.minLength(3), validCityParam(['Zürich', 'Wien'])]],
-      to:   [null, [Validators.required, Validators.minLength(3)]],
+      to: [null, [Validators.required, Validators.minLength(3)]],
       date: [null, [Validators.required]]
     });
     console.log(this.editForm.value);
@@ -89,9 +89,14 @@ export class FlightEditComponent implements OnInit {
     this.route.params.pipe(
       switchMap(params => this.flightService.findById(params.id)))
       .subscribe(
-        flight => { this.selectedFlight = flight; this.message = ''; },
-        err => { this.message = 'Fehler beim Laden'; }
-    );
+        flight => {
+          this.selectedFlight = flight;
+          this.message = '';
+        },
+        err => {
+          this.message = 'Fehler beim Laden';
+        }
+      );
   }
 
   // save(): void {
